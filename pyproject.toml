@@ -85,11 +85,37 @@ test = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["./"]
-include = ["libcloud", "libcloud.test*" ]
+include = ["libcloud"]
+namespaces = false
 
 [tool.setuptools.package-data]
-"*" = ["*.json", "*.xml", "*.pub", "*.key", "*.pem", "*.crt", "*.csv", "*.txt", "*.html"]
+"*" = [
+    "LICENSE",
+    "NOTICE",
+    "example*.py",
+    "CHANGES.rst",
+    "README.rst",
+    "tox.ini",
+    "pyproject.toml",
+    "requirements-tests.txt",
+    "requirements-lint.txt",
+    "libcloud/test/secrets.py-dist",
+    "demos/*"
+]
+"libcloud.data" = [
+    "pricing.json"
+]
+"libcloud.test" = [
+    "*.json",
+    "*.xml",
+    "*.pub",
+    "*.key",
+    "*.pem",
+    "*.crt",
+    "*.csv",
+    "*.txt",
+    "*.html"
+]
 "libcloud.test.compute.fixtures.misc" = ["*"]
 "libcloud.test.dns.fixtures.worldwidedns" = ["*"]
 
